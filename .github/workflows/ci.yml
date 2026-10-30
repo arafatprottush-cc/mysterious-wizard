@@ -1,0 +1,43 @@
+name: Research Repository Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-and-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Secret scan
+        run: python scripts/check_secrets.py
+
+      - name: No signer or mainnet-send check
+        run: python scripts/check_no_signer.py
+
+      - name: Python syntax validation
+        run: python -m compileall -q src tests
+
+      - name: Verify required project rules
+        run: |
+          test -s AGENTS.md
+          test -s .agents/rules/00-safety.md
+          test -s .agents/rules/01-untrusted-content.md
+          test -s .agents/rules/02-statistics.md
+          test -s .agents/rules/03-repo-hygiene.md
+          test -s .agents/workflows/preflight.md
+          test -s .agents/workflows/phase-gate.md

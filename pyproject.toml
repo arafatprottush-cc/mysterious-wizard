@@ -1,0 +1,9 @@
+[project]
+name = "solana-sniper-research"
+version = "0.1.0"
+description = "Simulation-only research into Solana meme coin strategies"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
