@@ -1,0 +1,2 @@
+# No third-party dependencies currently.
+# New dependencies require approval and pinned versions.
