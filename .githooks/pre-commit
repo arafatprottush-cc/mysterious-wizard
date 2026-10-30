@@ -2,3 +2,5 @@
 set -eu
 echo "Running pre-commit secret scan..."
 python3 scripts/check_secrets.py --staged
+echo "Running pre-commit no-signing check..."
+python3 scripts/check_no_signer.py --staged

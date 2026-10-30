@@ -7,7 +7,11 @@ Facts about this repo:
 - Stack: Python.
 - Data: free-tier providers only unless explicitly approved.
 - Capital: not specified; do not assume an amount.
-- Entry points, test command, lint command: document after Phase 0.
+- No application entry point exists yet.
+- Tests: `python -m unittest discover -v`.
+- Lint: `ruff check src tests scripts`; formatting: `ruff format --check src tests scripts`.
+- Type check: `mypy src tests scripts`.
+- Install reviewed CI tools with `python -m pip install --require-hashes -r requirements-dev.lock`.
 - All protocol facts (program IDs, fees, curve parameters) live in
   docs/protocol_facts.md with source URL and retrieval date.
 - Never hardcode protocol facts from memory.

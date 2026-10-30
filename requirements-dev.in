@@ -1,0 +1,5 @@
+# Reviewed, pinned developer tools; the complete resolved lock is in
+# requirements-dev.lock.
+ruff==0.16.0
+mypy==2.3.0
+pip-audit==2.10.0

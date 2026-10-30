@@ -4,6 +4,14 @@
 *.pem
 *.key
 *.seed
+*.p12
+*.pfx
+**/id_rsa
+**/id_ed25519
+**/keypair.json
+**/wallet.json
+.aws/credentials
+.config/solana/
 *.sqlite
 *.db
 __pycache__/
